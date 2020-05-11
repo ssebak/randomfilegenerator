@@ -72,7 +72,7 @@ def progress(count, total, status=''):
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
-os.system('cls')
+os.system('cls' if os.name == 'nt' else 'clear')
 
 subdirLevel_default = 0
 numDirectories_default = 1
