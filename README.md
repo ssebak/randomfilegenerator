@@ -37,7 +37,3 @@ drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:26 ehiexiwz
 drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:27 fwmimgim
 -rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 gomwxqlh.txt
 drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:29 gttqdywk
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 gzdqpgsu.txt
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 hrfnwjqs.txt
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 icxgghyj.txt
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 jrfawsxm.txt
