@@ -1,21 +1,56 @@
 import random
 import string
 import os
-import sys #for progress bar
+
 
 from localFunctions import generateRandomness
 from localFunctions import generateFilename
 from localFunctions import generateDirname
 from localFunctions import humanreadableNumber
 from localFunctions import humanreadableFilesize
-from localFunctions import createFiles
-from localFunctions import createFolder
 from localFunctions import calcHowmanyfolders
 from localFunctions import progress
 
 i = 0
 
-system('cls' if os.name == 'nt' else 'clear')
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+def createFiles(dirName,filesize,totalFiles):
+    global i
+    fileName = generateFilename(filenameLength,filenameExtension)
+    #filePath = fileName
+    filePath = os.path.join(dirName, fileName)
+    f = open (filePath,"w")
+    rndString = generateRandomness(filesize)
+    f.write (rndString)
+    f.close()
+
+    progress(i, totalFiles, status='Creating files ....')
+    i += 1
+
+#+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+def createFolder(createinDir,subdirCreated,totalFiles):
+    global subdirLevel
+    
+    for x in range(numDirectories):
+        dirName = os.path.join(createinDir,generateDirname(dirnameLength))
+        if not os.path.exists(dirName):
+            #print(dirName)
+            os.mkdir(dirName)
+            
+            
+            #os.chdir(dirName)
+            for y in range(numFilesPerDirectory):
+                createFiles(dirName,fileSize,totalFiles)
+            
+        if subdirLevel > 0:
+            if subdirCreated < subdirLevel:
+                createFolder(dirName,subdirCreated + 1,totalFiles)
+
+
+if os.name == 'nt':
+    os.system('cls')
+else:
+    os.system('clear')
 
 subdirLevel_default = 0
 numDirectories_default = 1
@@ -36,7 +71,7 @@ else:
 
 numFilesPerDirectory = int(input("How many files should be created in each folder: "))
 fileSize = int(input("How large (in KB) should each file be: "))
-fileSize *= 10
+fileSize *= 1000
 
 dirStart = str(input("Enter path for creating folders and files (" + os.getcwd() + "): "))
 if not dirStart:
