@@ -7,6 +7,7 @@ Simply run the randomFiles.py script and it will ask you what it needs to know b
 /tmp/files/:
 total 0
 drwxrwxrwx 1 ssebak ssebak 4.0K May 11 09:20 .
+
 drwxrwxrwt 1 root   root   4.0K May 11 10:51 ..
 drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:29 cjgrbnep
 drwxrwxrwx 1 ssebak ssebak 4.0K May 11 09:20 gpttdhdp
