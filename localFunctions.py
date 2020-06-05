@@ -1,6 +1,7 @@
 import random
 import string
 import sys #for progress bar
+import math
 
 def generateRandomness(l):
     rndString = ''.join(random.choice(string.ascii_lowercase + ' ') for x in range(l))
@@ -21,19 +22,21 @@ def humanreadableNumber(n):
         return str(format(round(n/1000000,1),',')) + " million"
     elif n < 999999999999:
         return str(format(round(n/1000000000,1),',')) + " billion"
-    else:
-        return str(format(n,'E'))
+    else: #n < 999999999999999:
+        return str(format(round(n/1000000000000,1),',')) + " thrillion"
 
-def humanreadableFilesize(n):
-    if n <= 1000:
-        return str(n) + "KB"
-    elif n <= 1000000:
-        return str(round(n/1000,2)) + "MB"
-    elif n <= 1000000000:
-        return str(round(n/1000000,2)) + "GB"
-    else:
-        return str(round(n/1000000000,2)) + "TB"
 
+def humanreadableFilesize(bytes):
+    sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB']
+    if bytes == 0:
+        return '0 Byte'
+
+    i = int(math.floor(math.log(bytes) / math.log(1024)))
+    
+    if i > len(sizes):
+        return str(round(bytes / math.pow(1024, i),2 )) + ' whatever' #just to return something funny to the user if the number is totally out of scope
+    else:
+        return str(round(bytes / math.pow(1024, i),2 )) + ' ' + sizes[i]
 
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 def calcHowmanyfolders(numFolders, subdirLevel, numFiles, kb):
@@ -45,7 +48,7 @@ def calcHowmanyfolders(numFolders, subdirLevel, numFiles, kb):
 
     totalFiles = totalFolders * numFiles
     totalkb = totalFiles * kb
-    print()
+    
     run = input("A total of " + humanreadableNumber(totalFolders) + " folders and " + humanreadableNumber(totalFiles) + " files that will take appr " + humanreadableFilesize(totalkb) + " of diskspace will be created. Ok to continue (Y/N)?")
 
     if run != 'Y' and run != 'y':

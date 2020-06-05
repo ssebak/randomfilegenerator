@@ -6,8 +6,6 @@ import os
 from localFunctions import generateRandomness
 from localFunctions import generateFilename
 from localFunctions import generateDirname
-from localFunctions import humanreadableNumber
-from localFunctions import humanreadableFilesize
 from localFunctions import calcHowmanyfolders
 from localFunctions import progress
 
@@ -71,7 +69,7 @@ else:
 
 numFilesPerDirectory = int(input("How many files should be created in each folder: "))
 fileSize = int(input("How large (in KB) should each file be: "))
-fileSize *= 1000
+fileSize *= 1024
 
 dirStart = str(input("Enter path for creating folders and files (" + os.getcwd() + "): "))
 if not dirStart:
