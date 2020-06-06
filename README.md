@@ -1,44 +1,11 @@
 # randomfilegenerator
-Creates as many files/folders as you request, using random filenames, foldernames, and file content. Totally useless of course, unless you need some files ....
+Creates as many files/folders as you request, using random filenames, foldernames, and file content. Totally useless unless you need a bunch of files ....
 
-Simply run the randomFiles.py script and it will ask you what it needs to know before running.
+Simply run the randomFiles.py script and it will ask you what it needs to know before running. You will be asked how many folders, files, and levels you want to create, and also informed of the total number of files and folder that will be created, together with the amount of diskspace those files will take. See below for a "screenshot"
 
-
-/tmp/files/:
-total 0
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 09:20 .
-drwxrwxrwt 1 root   root   4.0K May 11 10:51 ..
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:29 cjgrbnep
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 09:20 gpttdhdp
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 09:13 ibvrzwbe
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 09:03 idapamra
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 09:24 lihnkvuv
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:55 qcgdiwde
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:52 qohxzarg
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 09:16 ryaiuaii
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:37 skdwvciz
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:59 tfuojtnw
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:34 tgdaxhgo
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:40 xpzkkyzg
-
-
-/tmp/files/cjgrbnep:
-total 0
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:29 .
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 09:20 ..
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 bcnghxlb.txt
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 bjftuglx.txt
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 bvigbfoj.txt
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:28 dkevjxir
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:26 dqxmonrf
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:26 ehiexiwz
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 eltfwwcp.txt
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 epmhlhil.txt
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 fsasrfke.txt
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:27 fwmimgim
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 gomwxqlh.txt
-drwxrwxrwx 1 ssebak ssebak 4.0K May 11 08:29 gttqdywk
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 gzdqpgsu.txt
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 hrfnwjqs.txt
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 icxgghyj.txt
--rw-rw-rw- 1 ssebak ssebak   10 May 11 08:25 jrfawsxm.txt
+How many subfolder levels should be created in addition to the top folder (0): 4
+How many folders should be created in each subfolder (1): 2
+How many files should be created in each folder: 10
+How large (in KB) should each file be: 2
+Enter path for creating folders and files (/home/ssebak/projects/randomfilegenerator):
+A total of 62 folders and 620 files that will take appr 1.21 MB of diskspace will be created. Ok to continue (Y/N)?
