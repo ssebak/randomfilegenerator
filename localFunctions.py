@@ -30,7 +30,6 @@ def humanreadableFilesize(bytes):
         return '0 Byte'
 
     i = int(math.floor(math.log(bytes) / math.log(1024)))
-    print(i)
     if i > len(sizes):
         
         return str(round(bytes / math.pow(1024, i),2 )) + ' whatever' #just to return something funny to the user if the number is totally out of scope
