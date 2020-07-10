@@ -16,14 +16,12 @@ def generateDirname(l):
     return dname
 
 def humanreadableNumber(n):
-    if n < 999999:
-        return str(format(n,','))
-    elif n < 999999999:
-        return str(format(round(n/1000000,1),',')) + " million"
-    elif n < 999999999999:
-        return str(format(round(n/1000000000,1),',')) + " billion"
-    else: #n < 999999999999999:
-        return str(format(round(n/1000000000000,1),',')) + " thrillion"
+    millnames = ['',' Thousand',' Million',' Billion',' Trillion']
+    n = float(n)
+    millidx = max(0,min(len(millnames)-1,
+                        int(math.floor(0 if n == 0 else math.log10(abs(n))/3))))
+
+    return '{:.0f}{}'.format(n / 10**(3 * millidx), millnames[millidx])
 
 
 def humanreadableFilesize(bytes):
@@ -32,8 +30,9 @@ def humanreadableFilesize(bytes):
         return '0 Byte'
 
     i = int(math.floor(math.log(bytes) / math.log(1024)))
-    
+    print(i)
     if i > len(sizes):
+        
         return str(round(bytes / math.pow(1024, i),2 )) + ' whatever' #just to return something funny to the user if the number is totally out of scope
     else:
         return str(round(bytes / math.pow(1024, i),2 )) + ' ' + sizes[i]
@@ -50,7 +49,7 @@ def calcHowmanyfolders(numFolders, subdirLevel, numFiles, kb):
     totalkb = totalFiles * kb
     
     run = input("A total of " + humanreadableNumber(totalFolders) + " folders and " + humanreadableNumber(totalFiles) + " files that will take appr " + humanreadableFilesize(totalkb) + " of diskspace will be created. Ok to continue (Y/N)?")
-
+    
     if run != 'Y' and run != 'y':
         exit()
     print()
