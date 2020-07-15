@@ -47,7 +47,7 @@ def calcHowmanyfolders(numFolders, subdirLevel, numFiles, kb):
     totalFiles = totalFolders * numFiles
     totalkb = totalFiles * kb
     
-    run = input("A total of " + humanreadableNumber(totalFolders) + " folders and " + humanreadableNumber(totalFiles) + " files that will take appr " + humanreadableFilesize(totalkb) + " of diskspace will be created. Ok to continue (Y/N)?")
+    run = input("\nA total of " + humanreadableNumber(totalFolders) + " folders and " + humanreadableNumber(totalFiles) + " files that will take appr " + humanreadableFilesize(totalkb) + " of diskspace will be created. Ok to continue (Y/N)?")
     
     if run != 'Y' and run != 'y':
         exit()
@@ -61,16 +61,19 @@ def progress(count, total, status=''):
 
     sys.stdout.write('%s%s ...%s\r' % (percents, '%', status))
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-def getNumericValue(prompt):
+def getNumericValue(prompt, type = 'int'):
     while True:
         try:
-            value = int(input(prompt))
+            if type == 'int':
+                value = int(input(prompt))
+            elif type == 'float':
+                value = float(input(prompt))
         except ValueError:
-            print("Please input a numeric value only (no decimals)")
+            print("Please input a numeric value only (no decimals)\n")
             continue
 
         if value < 0:
-            print("Please input a positive numeric value only.")
+            print("Please input a positive numeric value only.\n")
             continue
         else:
             break

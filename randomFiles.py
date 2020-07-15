@@ -58,7 +58,7 @@ numDirectories_default = 1
 subdirLevel = getNumericValue("How many subfolder levels should be created in addition to the top folder (" + str(subdirLevel_default) + "): ")
 numDirectories = getNumericValue("How many folders should be created in each subfolder (" + str(numDirectories_default) + "): ")
 numFilesPerDirectory = getNumericValue("How many files should be created in each folder: ")
-fileSize = getNumericValue("How large (in KB) should each file be: ")
+fileSize = getNumericValue("How large (in KB) should each file be: ", 'float')
 fileSize *= 1024
 
 dirStart = str(input("Enter path for creating folders and files (" + os.getcwd() + "): "))
