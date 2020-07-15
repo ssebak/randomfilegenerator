@@ -8,6 +8,7 @@ from localFunctions import generateFilename
 from localFunctions import generateDirname
 from localFunctions import calcHowmanyfolders
 from localFunctions import progress
+from localFunctions import getNumericValue
 
 i = 0
 
@@ -53,22 +54,11 @@ else:
 subdirLevel_default = 0
 numDirectories_default = 1
 
-subdirLevel = input("How many subfolder levels should be created in addition to the top folder (" + str(subdirLevel_default) + "): ")
-if not subdirLevel.strip():
-    #empty string, use default value
-    subdirLevel = subdirLevel_default
-else:
-    subdirLevel = int(subdirLevel)
 
-numDirectories = input("How many folders should be created in each subfolder (" + str(numDirectories_default) + "): ")
-if not numDirectories.strip():
-    #empty string, use default value
-    numDirectories = numDirectories_default
-else:
-    numDirectories = int(numDirectories)
-
-numFilesPerDirectory = int(input("How many files should be created in each folder: "))
-fileSize = int(input("How large (in KB) should each file be: "))
+subdirLevel = getNumericValue("How many subfolder levels should be created in addition to the top folder (" + str(subdirLevel_default) + "): ")
+numDirectories = getNumericValue("How many folders should be created in each subfolder (" + str(numDirectories_default) + "): ")
+numFilesPerDirectory = getNumericValue("How many files should be created in each folder: ")
+fileSize = getNumericValue("How large (in KB) should each file be: ")
 fileSize *= 1024
 
 dirStart = str(input("Enter path for creating folders and files (" + os.getcwd() + "): "))

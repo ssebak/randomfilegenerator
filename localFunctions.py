@@ -61,3 +61,17 @@ def progress(count, total, status=''):
 
     sys.stdout.write('%s%s ...%s\r' % (percents, '%', status))
 #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+def getNumericValue(prompt):
+    while True:
+        try:
+            value = int(input(prompt))
+        except ValueError:
+            print("Please input a numeric value only (no decimals)")
+            continue
+
+        if value < 0:
+            print("Please input a positive numeric value only.")
+            continue
+        else:
+            break
+    return value
